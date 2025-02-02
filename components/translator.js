@@ -13,6 +13,10 @@ class Translator {
         return ""
     }
 
+    highlightTranslation(original, translated) {
+        return ""
+    }
+
 }
 
 module.exports = Translator;

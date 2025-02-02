@@ -14,9 +14,13 @@ module.exports = function (app) {
         const text = req.body.text;
         if (text !== "") {
           if (locale === 'american-to-british') {
-            response = "a to b";
+            let translation = translator.americanToBritish(text);
+            translation = translator.highlightTranslation(text, translation);
+            response = { text, translation };
           } else if (locale === 'british-to-american') {
-            response = 'b to a';
+            let translation = translator.britishToAmerican(text);
+            translation = translator.highlightTranslation(text, translation);
+            response = { text, translation };
           } else {
             response = { error: 'Invalid value for locale field' };
           }
