@@ -112,25 +112,25 @@ suite('Unit Tests', () => {
     test('Highlight translation in "Mangoes are my favorite fruit."', function () {
         const text = 'Mangoes are my favorite fruit.';
         const translatedText = 'Mangoes are my favourite fruit.';
-        const highlightedText = 'Mangoes are my <span class="highlight">favourite<span> fruit.'
+        const highlightedText = 'Mangoes are my <span class="highlight">favourite</span> fruit.'
         assert.equal(translator.highlightTranslation(text, translatedText), highlightedText);
     })
     test('Highlight translation in "I ate yogurt for breakfast."', function () {
         const text = 'I ate yogurt for breakfast.';
         const translatedText = 'I ate yoghurt for breakfast.';
-        const highlightedText = 'I ate <span class="highlight">yoghurt<span> for breakfast.'
+        const highlightedText = 'I ate <span class="highlight">yoghurt</span> for breakfast.'
         assert.equal(translator.highlightTranslation(text, translatedText), highlightedText);
     })
     test('Highlight translation in "We watched the footie match for a while."', function () {
         const text = 'We watched the footie match for a while.';
         const translatedText = 'We watched the soccer match for a while.';
-        const highlightedText = 'We watched the <span class="highlight">soccer<span> match for a while.'
+        const highlightedText = 'We watched the <span class="highlight">soccer</span> match for a while.'
         assert.equal(translator.highlightTranslation(text, translatedText), highlightedText);
     })
     test('Highlight translation in "Paracetamol takes up to an hour to work."', function () {
         const text = 'Paracetamol takes up to an hour to work.';
         const translatedText = 'Tylenol takes up to an hour to work.';
-        const highlightedText = '<span class="highlight">Tylenol<span> takes up to an hour to work.'
+        const highlightedText = '<span class="highlight">Tylenol</span> takes up to an hour to work.'
         assert.equal(translator.highlightTranslation(text, translatedText), highlightedText);
     })
 });
