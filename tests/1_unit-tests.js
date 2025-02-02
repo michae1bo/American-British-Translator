@@ -70,7 +70,7 @@ suite('Unit Tests', () => {
     })
     test('Translate "First, caramelise the onions." to American English', function() {
         const text = "First, caramelise the onions.";
-        const translatedText = "First, caramelize the onions";
+        const translatedText = "First, caramelize the onions.";
         assert.equal(translator.britishToAmerican(text), translatedText);
     })
     test('Translate "I spent the bank holiday at the funfair." to American English', function() {

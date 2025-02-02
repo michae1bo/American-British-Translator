@@ -6,7 +6,7 @@ module.exports = function (app) {
   
   const translator = new Translator();
 
-  translator.americanToBritish('Lunch is at 12:15 today.');
+  translator.americanToBritish('I had a bicky then went to the chippy.');
 
   app.route('/api/translate')
     .post((req, res) => {
