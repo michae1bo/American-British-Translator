@@ -13,7 +13,7 @@ suite('Functional Tests', () => {
     
     test('Translation with text and locale fields: POST request to /api/translate', function(done) {
         chai.request(server)
-            .post()
+            .post('/api/translate')
             .type('form')
             .send({
                 text: 'Mangoes are my favorite fruit.',
@@ -24,13 +24,13 @@ suite('Functional Tests', () => {
                 assert.property(res.body, 'text');
                 assert.property(res.body, 'translation');
                 assert.equal(res.body.text, 'Mangoes are my favorite fruit.');
-                assert.equal(res.body.translation, 'Mangoes are my <span class="highlight">favourite<span> fruit.');
+                assert.equal(res.body.translation, 'Mangoes are my <span class="highlight">favourite</span> fruit.');
                 done();
             })
     })
     test('Translation with text and invalid locale field: POST request to /api/translate', function(done) {
         chai.request(server)
-            .post()
+            .post('/api/translate')
             .type('form')
             .send({
                 text: 'Mangoes are my favorite fruit.',
@@ -45,7 +45,7 @@ suite('Functional Tests', () => {
     })
     test('Translation with missing text field: POST request to /api/translate', function(done) {
         chai.request(server)
-            .post()
+            .post('/api/translate')
             .type('form')
             .send({
                 locale: 'american-to-british'
@@ -59,7 +59,7 @@ suite('Functional Tests', () => {
     })
     test('Translation with missing text field: POST request to /api/translate', function(done) {
         chai.request(server)
-            .post()
+            .post('/api/translate')
             .type('form')
             .send({
                 text: 'Mangoes are my favorite fruit.'
@@ -73,7 +73,7 @@ suite('Functional Tests', () => {
     })
     test('Translation with missing text field: POST request to /api/translate', function(done) {
         chai.request(server)
-            .post()
+            .post('/api/translate')
             .type('form')
             .send({
                 text: '',
@@ -88,7 +88,7 @@ suite('Functional Tests', () => {
     })
     test('Translation with text and locale fields: POST request to /api/translate', function(done) {
         chai.request(server)
-            .post()
+            .post('/api/translate')
             .type('form')
             .send({
                 text: 'Mangoes are my favorite fruit.',
